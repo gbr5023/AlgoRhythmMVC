@@ -16,15 +16,11 @@ You can work with a partner on this problem
 
 package algorhythmmvc;
 
-public class AlgoRhythmMVC 
+/**
+ *
+ * @author Gisward
+ */
+public class RateMediaUI 
 {
-
-    /*
-        main(): Begins program Takes program to theLoginCntl.
-    */
-    public static void main(String[] args) 
-    {
-        LoginCntl theLoginCntl = new LoginCntl();
-    }
-
+    
 }
