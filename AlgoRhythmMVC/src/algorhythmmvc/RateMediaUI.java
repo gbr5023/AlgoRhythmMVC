@@ -16,11 +16,25 @@ You can work with a partner on this problem
 
 package algorhythmmvc;
 
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
+import javax.swing.table.JTableHeader;
+import javax.swing.table.TableModel;
+import java.util.Scanner;
+
 /**
  *
  * @author Gisward
  */
-public class RateMediaUI 
+public class RateMediaUI implements TableModelListener
 {
+
+    @Override
+    public void tableChanged(TableModelEvent tme) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
