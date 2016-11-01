@@ -24,5 +24,8 @@ import java.util.*;
  */
 public class RateMediaUI 
 {
-    
+    //help am I here help help
+    //ah
+    //hello
+    Scanner in = new Scanner(System.in);
 }
