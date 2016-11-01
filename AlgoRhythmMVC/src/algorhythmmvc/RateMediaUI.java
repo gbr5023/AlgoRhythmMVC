@@ -28,4 +28,6 @@ public class RateMediaUI
     //ah
     //hello
     Scanner in = new Scanner(System.in);
+    String hello = in.nextLine();
+    // did this work
 }
