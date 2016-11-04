@@ -33,7 +33,7 @@ import javax.swing.JRadioButton;
  *
  * @author Gisward
  */
-public class MediaMenuUI extends JFrame implements ActionListener
+public class CRUDMenuUI extends JFrame implements ActionListener
 {
     JFrame mediaMenuFrame;
     private JRadioButton readButton;
@@ -52,12 +52,12 @@ public class MediaMenuUI extends JFrame implements ActionListener
     private MediaListCntl theMediaListCntl;
     
     /**
-     * MediaMenuUI(): Instantiates a new NavigationCntl object = theNavigationCntl
+     * CRUDMenuUI(): Instantiates a new NavigationCntl object = theNavigationCntl
      *               with the parameter NavigationCntl parentNavigationCntl.
-     *               Calls setTheLayout() to layout the MediaMenuUI.
+     *               Calls setTheLayout() to layout the CRUDMenuUI.
      * @param parentNavigationCntl 
      */
-    public MediaMenuUI(MediaListCntl parentMediaListCntl) 
+    public CRUDMenuUI(MediaListCntl parentMediaListCntl) 
     {
         this.theMediaListCntl = parentMediaListCntl;
         setTheLayout();
@@ -252,15 +252,10 @@ public class MediaMenuUI extends JFrame implements ActionListener
         boolean editSelected = updateButton.isSelected();
         boolean deleteSelected = deleteButton.isSelected();
         
-        if(createSelected || editSelected || deleteSelected)
+        if(createSelected || editSelected || deleteSelected || readSelected)
         {
             mediaMenuFrame.setVisible(false);
             this.theMediaListCntl.requestCRUDSongUI();
-        }
-        else if(readSelected)
-        {
-            mediaMenuFrame.setVisible(false);
-            this.theMediaListCntl.requestMediaListUI();
         }
         else
         {
