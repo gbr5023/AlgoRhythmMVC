@@ -16,18 +16,18 @@ You can work with a partner on this problem
 
 package algorhythmmvc;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.JTableHeader;
-import javax.swing.table.TableModel;
+
+import java.util.*;
 /**
  *
  * @author Gisward
  */
 public class RateMediaUI 
 {
-    
+    //help am I here help help
+    //ah
+    //hello
+    Scanner in = new Scanner(System.in);
+    String hello = in.nextLine();
+    // did this work
 }

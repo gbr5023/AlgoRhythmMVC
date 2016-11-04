@@ -16,23 +16,25 @@ You can work with a partner on this problem
 
 package algorhythmmvc;
 
+import java.util.ArrayList;
+
+
 public class MediaListCntl 
 {
     private SongList theSongList;
     private NavigationCntl theNavigationCntl;
-    private CRUDMenuUI theCRUDMenuUI;
+    private MediaMenuUI theMediaMenuUI;
     private MediaListUI theMediaListUI;
     private MediaDetailUI theMediaDetailUI;
-    private CRUDSongUI theCRUDSongUI;
+    private crudSongUI theCRUDSongUI;
     private SongTableModel theSongTableModel;
     private VideoTableModel theVideoTableModel;
-    private CRUDSongTableModel theCRUDSongTableModel;
-    //private CRUDSongTableModel theCRUDSongTableModel;
+    private crudSongTableModel theCRUDSongTableModel;
     
     public MediaListCntl()
     {
         System.out.println("Made it to MediaListCntl");
-        requestCRUDMenuUI();
+        requestMediaMenuUI();
     }
     
     public Song getTheSongList(int row)
@@ -52,12 +54,12 @@ public class MediaListCntl
     
     public void requestCRUDSongUI()
     {
-       theCRUDSongUI = new CRUDSongUI(this); 
+       theCRUDSongUI = new crudSongUI(this); 
     }
     
-    public void requestCRUDMenuUI()
+    public void requestMediaMenuUI()
     {
-        theCRUDMenuUI = new CRUDMenuUI(this);
+        theMediaMenuUI = new MediaMenuUI(this);
     }
     
     public void requestNavigationCntl()
@@ -82,10 +84,9 @@ public class MediaListCntl
         return theSongTableModel;
     }
     
-    
-    public CRUDSongTableModel getCRUDSongTableModel()
+    public crudSongTableModel getCRUDSongTableModel()
     {
-        theCRUDSongTableModel = new CRUDSongTableModel();
+        theCRUDSongTableModel = new crudSongTableModel();
         
         return theCRUDSongTableModel;
     }

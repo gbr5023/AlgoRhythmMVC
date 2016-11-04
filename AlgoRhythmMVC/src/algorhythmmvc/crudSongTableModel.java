@@ -23,13 +23,13 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author Gisward
  */
-public class CRUDSongTableModel extends AbstractTableModel
+public class crudSongTableModel extends AbstractTableModel
 {
     private ArrayList<Song> theSongDetailList; //initialized by theMediaList.getTheMediaNameList()
     private SongList theMediaList; //must access getter methods to initialize ArrayList<String> theMediaNameList & colMediaNameArray[]
     private String colMediaArray[]; // initialized by theMediaList.getColMediaNameArray()
 
-    public CRUDSongTableModel()
+    public crudSongTableModel()
     {
         theMediaList = new SongList();
         theSongDetailList = theMediaList.getTheSongList();

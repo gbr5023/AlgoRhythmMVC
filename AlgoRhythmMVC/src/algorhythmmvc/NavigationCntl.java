@@ -24,7 +24,7 @@ public class NavigationCntl
 {
     private MainMenuUI theMainMenuUI; // declare theMainMenuUI object of class MainMenuUI
     private MediaListCntl theMediaListCntl; // declare theMediaListCntl object of class MediaListCntl
-    private CRUDMenuUI theCRUDMenuUI;
+    private MediaMenuUI theMediaMenuUI;
     
     /**
      * NavigationCntl(): Notifies that the program is now at the NavigationCntl

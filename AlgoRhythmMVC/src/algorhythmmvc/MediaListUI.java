@@ -172,7 +172,7 @@ public class MediaListUI implements TableModelListener
     private void backButtonActionPerformed(ActionEvent evt)
     {
         theMediaNameFrame.setVisible(false);
-        theMediaListCntl.requestCRUDMenuUI();
+        theMediaListCntl.requestMediaMenuUI();
     }
     
     private void exitButtonActionPerformed(ActionEvent evt)

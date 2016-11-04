@@ -23,9 +23,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableModel;
-import javax.swing.text.JTextComponent;
 
-public class CRUDSongUI extends JTextField implements TableModelListener
+public class crudSongUI implements TableModelListener
 {
     private JFrame crudSongFrame;
     private JPanel crudSongPanel;
@@ -48,16 +47,16 @@ public class CRUDSongUI extends JTextField implements TableModelListener
     
     private MediaListCntl theMediaListCntl;
     
-    public CRUDSongUI(MediaListCntl parentMediaListCntl)
+    public crudSongUI(MediaListCntl parentMediaListCntl)
     {
         this.theMediaListCntl = parentMediaListCntl;
-        //this.theSongTableModel = theMediaListCntl.getCRUDSongTableModel();
+        this.theSongTableModel = theMediaListCntl.getCRUDSongTableModel();
         setTheLayout();
     }
     
     public void setTheLayout()
     {
-        crudSongFrame = new JFrame("Create, Read, Update, Delete Media");
+        crudSongFrame = new JFrame("Create, ReadS, Update, Delete Media");
         
         crudSongTable = new JTable(this.theSongTableModel);
         crudSongTable.getModel().addTableModelListener(this);
@@ -65,7 +64,7 @@ public class CRUDSongUI extends JTextField implements TableModelListener
             for(int i = 0; i < crudSongTable.getRowCount(); i++)
             {
                 crudSongTable.setRowHeight(i, 28);
-            }       
+            }      
         crudSongTable.setPreferredScrollableViewportSize(new Dimension(450,63));
         crudSongTable.setFillsViewportHeight(true);
         
@@ -87,13 +86,6 @@ public class CRUDSongUI extends JTextField implements TableModelListener
         artistTextField = new JTextField();
         lengthTextField = new JTextField();
         ratingTextField = new JTextField();
-        
-        int i = 0;
-        
-        nameTextField.setText(theSongTableModel.getValueAt(i, 0).toString());
-        artistTextField.setText(theSongTableModel.getValueAt(i, 1).toString());
-        lengthTextField.setText(theSongTableModel.getValueAt(i, 2).toString());
-        ratingTextField.setText(theSongTableModel.getValueAt(i, 3).toString());
         
         addButton = new JButton("Add");
         updateButton = new JButton("Update");
@@ -246,7 +238,7 @@ public class CRUDSongUI extends JTextField implements TableModelListener
     public void backButtonActionPerformed(ActionEvent evt)
     {
         crudSongFrame.setVisible(false);
-        theMediaListCntl.requestCRUDMenuUI();
+        theMediaListCntl.requestMediaMenuUI();
     }
     
     public void exitButtonActionPerformed(ActionEvent evt)
@@ -263,15 +255,4 @@ public class CRUDSongUI extends JTextField implements TableModelListener
         
         // Do something with the data
     }
-    
-    /*
-    @Override
-    public void setText(String textFieldString)
-    {
-        if(textFieldString.isEmpty())
-        {
-            System.err.println("Plese fill in all text fields.");
-        }
-    }
-*/
 }
