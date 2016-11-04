@@ -38,7 +38,7 @@ import javax.swing.JPanel;
 public class MainMenuUI extends JFrame implements ActionListener
 {
     JFrame mainMenuFrame;
-    private JRadioButton addMediaButton;
+    private JRadioButton crudMediaButton;
     private JRadioButton crudPlaylistButton;
     private JRadioButton rateButton;
     private JRadioButton playButton;
@@ -73,7 +73,7 @@ public class MainMenuUI extends JFrame implements ActionListener
     private void setTheLayout() 
     {
         mainMenuFrame = new JFrame("Main Menu");
-        addMediaButton = new JRadioButton("All Media");
+        crudMediaButton = new JRadioButton("CRUD Media");
         crudPlaylistButton = new JRadioButton("CRUD Playlist");
         rateButton = new JRadioButton("Rate Media");
         playButton = new JRadioButton("Play Media");
@@ -85,7 +85,7 @@ public class MainMenuUI extends JFrame implements ActionListener
         regularButtonPanel = new JPanel(new BorderLayout());
         //regularButtonGroup = new ButtonGroup();
         
-        addMediaButton.setFont(new Font("Arial", Font.PLAIN, 18));
+        crudMediaButton.setFont(new Font("Arial", Font.PLAIN, 18));
         crudPlaylistButton.setFont(new Font("Arial", Font.PLAIN, 18));
         rateButton.setFont(new Font("Arial", Font.PLAIN, 18));
         playButton.setFont(new Font("Arial", Font.PLAIN, 18));
@@ -93,7 +93,7 @@ public class MainMenuUI extends JFrame implements ActionListener
         goButton.setFont(new Font("Arial", Font.PLAIN, 18));
         exitButton.setFont(new Font("Arial", Font.PLAIN, 18));
         
-        addMediaButton.setPreferredSize(new Dimension(110, 80));
+        crudMediaButton.setPreferredSize(new Dimension(140, 80));
         crudPlaylistButton.setPreferredSize(new Dimension(150, 80));
         rateButton.setPreferredSize(new Dimension(130, 80));
         playButton.setPreferredSize(new Dimension(130, 80));
@@ -107,12 +107,12 @@ public class MainMenuUI extends JFrame implements ActionListener
         
         //RADIO BUTTONS    
                 //ADD MEDIA BUTTON add ActionListener via nested class
-                addMediaButton.addActionListener(new ActionListener() 
+                crudMediaButton.addActionListener(new ActionListener() 
                 {
                     @Override
                     public void actionPerformed(ActionEvent evt) 
                     {
-                        addMediaButtonActionPerformed(evt);
+                        crudMediaButtonActionPerformed(evt);
                     }
                 });
                 // PLAY MEDIA BUTTON add ActionListener via nested class
@@ -154,14 +154,14 @@ public class MainMenuUI extends JFrame implements ActionListener
                 
                 //add Buttons to radioButtonGroup to ensure that one radio button
                 //is selected at a time
-                radioButtonGroup.add(addMediaButton);
+                radioButtonGroup.add(crudMediaButton);
                 radioButtonGroup.add(playButton);
                 radioButtonGroup.add(crudPlaylistButton);
                 radioButtonGroup.add(rateButton);
                 radioButtonGroup.add(shareButton);
                 
                 //add radioButtons to the panel to group them together
-                radioButtonPanel.add(addMediaButton);
+                radioButtonPanel.add(crudMediaButton);
                 radioButtonPanel.add(playButton);
                 radioButtonPanel.add(crudPlaylistButton);
                 radioButtonPanel.add(rateButton);
@@ -211,7 +211,7 @@ public class MainMenuUI extends JFrame implements ActionListener
      * addMediaButtonActionPerformed(): Handles clicks to addMediaButton.
      * @param evt 
      */
-    private void addMediaButtonActionPerformed(ActionEvent evt) 
+    private void crudMediaButtonActionPerformed(ActionEvent evt) 
     {
         
     }
@@ -261,7 +261,7 @@ public class MainMenuUI extends JFrame implements ActionListener
      */
     private void goButtonActionPerformed(ActionEvent evt) 
     {
-        boolean addSelected = addMediaButton.isSelected();
+        boolean addSelected = crudMediaButton.isSelected();
         boolean playSelected = playButton.isSelected();
         //boolean crudSelected = crudPlaylistButton.isSelected();
         boolean rateSelected = rateButton.isSelected();

@@ -24,7 +24,7 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableModel;
 
-public class crudSongUI implements TableModelListener
+public class CRUDSongUI implements TableModelListener
 {
     private JFrame crudSongFrame;
     private JPanel crudSongPanel;
@@ -45,12 +45,12 @@ public class crudSongUI implements TableModelListener
     private JButton backButton;
     private JButton exitButton;
     
-    private MediaListCntl theMediaListCntl;
+    private CRUDMediaCntl theCRUDMediaCntl;
     
-    public crudSongUI(MediaListCntl parentMediaListCntl)
+    public CRUDSongUI(CRUDMediaCntl parentMediaListCntl)
     {
-        this.theMediaListCntl = parentMediaListCntl;
-        this.theSongTableModel = theMediaListCntl.getCRUDSongTableModel();
+        this.theCRUDMediaCntl = parentMediaListCntl;
+        this.theSongTableModel = theCRUDMediaCntl.getCRUDSongTableModel();
         setTheLayout();
     }
     
@@ -190,7 +190,7 @@ public class crudSongUI implements TableModelListener
         double length = Double.parseDouble(lengthTextField.getText());
         int rating = Integer.parseInt(ratingTextField.getText());
         Song row = new Song(name, artist, length, rating);
-        theMediaListCntl.addRow(row);
+        theCRUDMediaCntl.addRow(row);
     }
     
     public void updateButtonActionPerformed(ActionEvent evt)
@@ -200,10 +200,10 @@ public class crudSongUI implements TableModelListener
                 
         if(row >= 0) 
         {
-            theMediaListCntl.updateName(nameTextField.getText(), row, 0);
-            theMediaListCntl.updateArtist(artistTextField.getText(), row, 1);
-            theMediaListCntl.updateDouble(lengthTextField.getText(), row, 2);
-            theMediaListCntl.updateInteger(ratingTextField.getText(), row, 3);
+            theCRUDMediaCntl.updateName(nameTextField.getText(), row, 0);
+            theCRUDMediaCntl.updateArtist(artistTextField.getText(), row, 1);
+            theCRUDMediaCntl.updateDouble(lengthTextField.getText(), row, 2);
+            theCRUDMediaCntl.updateInteger(ratingTextField.getText(), row, 3);
         }
         else
         {
@@ -227,7 +227,7 @@ public class crudSongUI implements TableModelListener
         int row = crudSongTable.getSelectedRow();
         if(row >= 0)
         {
-            theMediaListCntl.removeRow(row);
+            theCRUDMediaCntl.removeRow(row);
         }
         else
         {
@@ -238,7 +238,7 @@ public class crudSongUI implements TableModelListener
     public void backButtonActionPerformed(ActionEvent evt)
     {
         crudSongFrame.setVisible(false);
-        theMediaListCntl.requestMediaMenuUI();
+        theCRUDMediaCntl.requestCRUDMenuUI();
     }
     
     public void exitButtonActionPerformed(ActionEvent evt)

@@ -40,7 +40,7 @@ import javax.swing.table.TableModel;
  */
 public class MediaListUI implements TableModelListener
 {
-    private MediaListCntl theMediaListCntl;
+    private CRUDMediaCntl theCRUDMediaCntl;
     private JFrame theMediaNameFrame;
     private JTable theMediaNameTable;
     private JScrollPane theScrollPane;
@@ -55,10 +55,10 @@ public class MediaListUI implements TableModelListener
     private JTableHeader theTableHeader;
     GridBagConstraints layoutConst; //layout manager
     
-    public MediaListUI(MediaListCntl parentMediaListCntl)
+    public MediaListUI(CRUDMediaCntl parenttheCRUDMediaCntl)
     {
-        this.theMediaListCntl = parentMediaListCntl;
-        this.theCRUDSongTableModel = theMediaListCntl.getCRUDSongTableModel();
+        this.theCRUDMediaCntl = parenttheCRUDMediaCntl;
+        this.theCRUDSongTableModel = theCRUDMediaCntl.getCRUDSongTableModel();
         setTheLayout();
     }
     
@@ -165,14 +165,14 @@ public class MediaListUI implements TableModelListener
         else
         {
             theMediaNameFrame.setVisible(false);
-            theMediaListCntl.requestMediaDetailUI(row);
+            theCRUDMediaCntl.requestMediaDetailUI(row);
         }
     }
     
     private void backButtonActionPerformed(ActionEvent evt)
     {
         theMediaNameFrame.setVisible(false);
-        theMediaListCntl.requestMediaMenuUI();
+        theCRUDMediaCntl.requestCRUDMenuUI();
     }
     
     private void exitButtonActionPerformed(ActionEvent evt)

@@ -19,22 +19,22 @@ package algorhythmmvc;
 import java.util.ArrayList;
 
 
-public class MediaListCntl 
+public class CRUDMediaCntl 
 {
     private SongList theSongList;
     private NavigationCntl theNavigationCntl;
-    private MediaMenuUI theMediaMenuUI;
+    private CRUDMenuUI theCRUDMenuUI;
     private MediaListUI theMediaListUI;
     private MediaDetailUI theMediaDetailUI;
-    private crudSongUI theCRUDSongUI;
+    private CRUDSongUI theCRUDSongUI;
     private SongTableModel theSongTableModel;
     private VideoTableModel theVideoTableModel;
     private crudSongTableModel theCRUDSongTableModel;
     
-    public MediaListCntl()
+    public CRUDMediaCntl()
     {
         System.out.println("Made it to MediaListCntl");
-        requestMediaMenuUI();
+        requestCRUDMenuUI();
     }
     
     public Song getTheSongList(int row)
@@ -54,12 +54,12 @@ public class MediaListCntl
     
     public void requestCRUDSongUI()
     {
-       theCRUDSongUI = new crudSongUI(this); 
+       theCRUDSongUI = new CRUDSongUI(this); 
     }
     
-    public void requestMediaMenuUI()
+    public void requestCRUDMenuUI()
     {
-        theMediaMenuUI = new MediaMenuUI(this);
+        theCRUDMenuUI = new CRUDMenuUI(this);
     }
     
     public void requestNavigationCntl()

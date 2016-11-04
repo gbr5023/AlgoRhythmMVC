@@ -27,7 +27,7 @@ import javax.swing.table.*;
  */
 public class MediaDetailUI 
 {
-    private MediaListCntl theMediaListCntl;
+    private CRUDMediaCntl theCRUDMediaCntl;
     private int row; // row of the mediaList ArrayList in SongList class
     private JTextArea mediaDetailTextArea;
     private JFrame mediaDetailFrame;
@@ -38,22 +38,23 @@ public class MediaDetailUI
     private JButton backButton;
     private JButton exitButton;
     
-    public MediaDetailUI(MediaListCntl parentMediaListCntl, int row)
+    public MediaDetailUI(CRUDMediaCntl parentCRUDMediaCntl, int row)
     {
-        this.theMediaListCntl = parentMediaListCntl;
+        this.theCRUDMediaCntl = parentCRUDMediaCntl;
         this.row = row;
         setTheLayout();
     }
     
     private void setTheLayout()
     {
-        Song theMedia = theMediaListCntl.getTheSongList(row);
+        Song theMedia = theCRUDMediaCntl.getTheSongList(row);
         mediaDetailTextArea = new JTextArea(
                                             "Song: " + theMedia.getMediaName() +
                                             "\nArtist: " + theMedia.getMediaArtist() +
                                             "\nLength: " + theMedia.getMediaLength() + 
                                             "\nRating: " + theMedia.getMediaRating()
                                            );
+        mediaDetailTextArea.setEditable(false);
         mediaDetailTextArea.setFont(new Font("Arial", Font.PLAIN, 20));
         mediaDetailTextArea.setLineWrap(true);
         mediaDetailTextArea.setWrapStyleWord(true);
@@ -99,7 +100,7 @@ public class MediaDetailUI
     public void backButtonActionPerformed(ActionEvent evt)
     {
         mediaDetailFrame.setVisible(false);
-        theMediaListCntl.requestMediaListUI();
+        theCRUDMediaCntl.requestMediaListUI();
     }
     
     public void exitButtonActionPerformed(ActionEvent evt)

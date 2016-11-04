@@ -23,8 +23,8 @@ package algorhythmmvc;
 public class NavigationCntl 
 {
     private MainMenuUI theMainMenuUI; // declare theMainMenuUI object of class MainMenuUI
-    private MediaListCntl theMediaListCntl; // declare theMediaListCntl object of class MediaListCntl
-    private MediaMenuUI theMediaMenuUI;
+    private CRUDMediaCntl theCRUDMediaCntl; // declare theMediaListCntl object of class MediaListCntl
+    //private CRUDMenuUI theCRUDMenuUI;
     
     /**
      * NavigationCntl(): Notifies that the program is now at the NavigationCntl
@@ -33,10 +33,10 @@ public class NavigationCntl
     public NavigationCntl()
     {
         System.out.println("Made it to NavigationCntl");
-        requestMainMenu();
+        requestMainMenuUI();
     }
     
-    public void requestMainMenu()
+    public void requestMainMenuUI()
     {
         theMainMenuUI = new MainMenuUI(this);
     }
@@ -46,6 +46,6 @@ public class NavigationCntl
      */
     public void requestMediaListCntl()
     {
-        this.theMediaListCntl = new MediaListCntl();
+        this.theCRUDMediaCntl = new CRUDMediaCntl();
     }
 }

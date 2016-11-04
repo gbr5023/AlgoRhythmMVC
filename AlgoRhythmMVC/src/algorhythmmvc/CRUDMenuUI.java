@@ -33,7 +33,7 @@ import javax.swing.JRadioButton;
  *
  * @author Gisward
  */
-public class MediaMenuUI extends JFrame implements ActionListener
+public class CRUDMenuUI extends JFrame implements ActionListener
 {
     JFrame mediaMenuFrame;
     private JRadioButton readButton;
@@ -49,7 +49,7 @@ public class MediaMenuUI extends JFrame implements ActionListener
     private JPanel radioButtonPanel;
     private JPanel regularButtonPanel;
     
-    private MediaListCntl theMediaListCntl;
+    private CRUDMediaCntl theCRUDMediaCntl;
     
     /**
      * MediaMenuUI(): Instantiates a new NavigationCntl object = theNavigationCntl
@@ -57,9 +57,9 @@ public class MediaMenuUI extends JFrame implements ActionListener
      *               Calls setTheLayout() to layout the MediaMenuUI.
      * @param parentNavigationCntl 
      */
-    public MediaMenuUI(MediaListCntl parentMediaListCntl) 
+    public CRUDMenuUI(CRUDMediaCntl parentCRUDMediaCntl) 
     {
-        this.theMediaListCntl = parentMediaListCntl;
+        this.theCRUDMediaCntl = parentCRUDMediaCntl;
         setTheLayout();
     }
     
@@ -255,12 +255,12 @@ public class MediaMenuUI extends JFrame implements ActionListener
         if(createSelected || editSelected || deleteSelected)
         {
             mediaMenuFrame.setVisible(false);
-            this.theMediaListCntl.requestCRUDSongUI();
+            this.theCRUDMediaCntl.requestCRUDSongUI();
         }
         else if(readSelected)
         {
             mediaMenuFrame.setVisible(false);
-            this.theMediaListCntl.requestMediaListUI();
+            this.theCRUDMediaCntl.requestMediaListUI();
         }
         else
         {
@@ -271,7 +271,7 @@ public class MediaMenuUI extends JFrame implements ActionListener
     private void backButtonActionPerformed(ActionEvent evt) 
     {
         mediaMenuFrame.setVisible(false);
-        this.theMediaListCntl.requestNavigationCntl();
+        this.theCRUDMediaCntl.requestNavigationCntl();
     }
     
     /**
