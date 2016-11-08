@@ -35,13 +35,17 @@ public class ExternalDataCntl
             File externalDataFile = new File(EXTERNAL_DATA_PATH + SONG_FILE_NAME); //File() arg needs a path
             Scanner in = new Scanner(externalDataFile); //have Scanner scan the File for input
             int count = 0;
+            //ArrayList<Media> tempMediaList = SerializedDataCntl.getSerializedDataCntl().getSerializedDataModel().getMediaList.getListOfMedia;
+            //tempMediaList.clear();
+            
             
             while(in.hasNextLine())
             {
                 String tempStr = in.nextLine();
                 //System.out.println(tempStr);
                 Song tempSong = new Song(tempStr);
-                System.out.println(tempStr);
+                //tempMediaList.add(tempSong);
+                System.out.println(tempSong.getMediaName());
                 count++;
             }
             
