@@ -16,32 +16,43 @@ You can work with a partner on this problem
 
 package algorhythmmvc;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author Gisward
  */
-public abstract class Media 
+public abstract class Media implements Serializable
 {
-    private String mediaName;
-    private String artistName;
-    private double mediaLength;
-    private double mediaAvgRating;
+    private String mediaName = "";
+    private String artistName = "";
+    private double mediaLength = 0;
+    private double mediaAvgRating = 0;
+    private String genre = "";
+    private String year = "";
     private ArrayList<Double> mediaRating;
     
     public Media()
     {
-        mediaName = "";
-        artistName = "";
-        mediaLength = 0.0;
-        mediaAvgRating = 0;
+        System.out.println("Called: Media()");
     }
     
-    public Media(String newMedia, String newArtist)
+    public Media(String importMediaString)
+    {
+        String delimiter = "\\t";
+        String[] tempMediaArray = importMediaString.split(delimiter);
+        this.genre = tempMediaArray[0];
+        this.mediaName = tempMediaArray[1];
+        this.artistName = tempMediaArray[2];
+        this.year = tempMediaArray[3];
+    }
+    
+    public Media(String newMedia, String newArtist, double newLength)
     {
         this.mediaName = newMedia;
         this.artistName = newArtist;
+        this.mediaLength = newLength;
     }
     
     public Media(String newMedia, String newArtist, double newLength, double newRating)
@@ -50,6 +61,14 @@ public abstract class Media
         this.artistName = newArtist;
         this.mediaLength = newLength;
         this.mediaAvgRating = newRating;
+    }
+    
+    public Media(String newMedia, String newArtist, String newYear, String newGenre)
+    {
+        this.mediaName = newMedia;
+        this.artistName = newArtist;
+        this.year = newYear;
+        this.genre = newGenre;
     }
     
     public abstract String getMediaName();

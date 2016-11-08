@@ -39,6 +39,8 @@ public class ExternalDataCntl
             while(in.hasNextLine())
             {
                 String tempStr = in.nextLine();
+                //System.out.println(tempStr);
+                Song tempSong = new Song(tempStr);
                 System.out.println(tempStr);
                 count++;
             }

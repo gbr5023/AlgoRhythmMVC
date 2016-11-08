@@ -29,14 +29,26 @@ public class Song extends Media
     private double songLength;
     private double songAvgRating;
     private ArrayList<Double> songRatingList;
+    private String spotifyURL = "";
     
     public Song()
     {
-        songName = "";
-        artistName = "";
-        songLength = 0.0;
-        songAvgRating = 0.0;
-        songRatingList = new ArrayList<>();
+        System.out.println("Called: Song()");
+    }
+    
+    /*
+    public Song(String newSong, String newArtist, double newLength)
+    {
+        super(newSong, newArtist, newLength);
+    }
+    */
+    
+    public Song(String importSongString)
+    {
+        super(importSongString);
+        String delimiter = "\\t";
+        String[] tempSongArray = importSongString.split(delimiter);
+        this.spotifyURL = tempSongArray[4];
     }
     
     public Song(String newSong, String newArtist, double newLength, double newRating)
@@ -48,7 +60,21 @@ public class Song extends Media
         //this.songAvgRating = newRating;
         this.songAvgRating = this.setMediaAvgRating(newRating);
     }
-    
+    /*
+    public Song(String importSongString)
+    {
+        
+        
+        
+        for(int i = 0; i <tempSongArray.length; i++)
+        {
+            String str = tempSongArray[i];
+            System.out.println(str);
+        }
+        
+    }
+    */
+   
     @Override
     public String getMediaName()
     {
