@@ -24,7 +24,8 @@ public class AlgoRhythmMVC
     */
     public static void main(String[] args) 
     {
-        LoginCntl theLoginCntl = new LoginCntl();
+        //LoginCntl theLoginCntl = new LoginCntl();
+        ExternalDataCntl theExternalDataCntl = new ExternalDataCntl();
     }
 
 }
