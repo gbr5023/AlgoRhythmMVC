@@ -37,6 +37,11 @@ public class CRUDSongTableModel extends AbstractTableModel
         colMediaArray = theMediaList.getColMediaArray();
     }
     
+    public ArrayList<Song> getUpdatedSongDetailList()
+    {
+        return this.theSongDetailList;
+    }
+    
     public void addRow(Song rowData)
     {
         theSongDetailList.add(rowData);

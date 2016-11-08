@@ -30,6 +30,7 @@ import javax.swing.table.TableModel;
 public class RateMediaUI implements TableModelListener
 {
     private MediaListCntl theMediaListCntl;
+    private RateMediaDetailsUI theRateMediaDetailsUI;
     
     private JFrame rateMediaFrame;
     private JPanel rateMediaPanel;
@@ -51,6 +52,7 @@ public class RateMediaUI implements TableModelListener
     private JTextField ratingTextField;
     
     private JButton updateButton;
+    private JButton infoButton;
     private JButton backButton;
     private JButton exitButton;
     
@@ -107,8 +109,6 @@ public class RateMediaUI implements TableModelListener
         lengthTextField.setEditable(false);
         ratingTextField.setEditable(true);
         
-        updateButton = new JButton("Update");
-        
         nameLabel.setBounds(20, 220, 100, 30);
         artistLabel.setBounds(230, 220, 100, 30);
         lengthLabel.setBounds(440, 220, 100, 30);
@@ -120,6 +120,7 @@ public class RateMediaUI implements TableModelListener
         ratingTextField.setBounds(760, 220, 100, 30);
         
         updateButton = new JButton("Update");
+        infoButton = new JButton("Media Info");
         backButton = new JButton("Back");
         exitButton = new JButton("Exit");
         
@@ -133,13 +134,23 @@ public class RateMediaUI implements TableModelListener
         lengthTextField.setBounds(530, 220, 100, 30);
         ratingTextField.setBounds(760, 220, 100, 30);
         
-        updateButton.setBounds(380, 260, 100, 25);
+        updateButton.setBounds(320, 260, 100, 25);
             updateButton.addActionListener(new ActionListener()
             {
                 @Override
                 public void actionPerformed(ActionEvent evt) 
                 {
                     updateButtonActionPerformed(evt);
+                }
+            });
+            
+        infoButton.setBounds(440, 260, 100, 25);
+            infoButton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent evt)
+                {
+                    infoButtonActionPerformed(evt);
                 }
             });
             
@@ -193,6 +204,7 @@ public class RateMediaUI implements TableModelListener
         rateMediaFrame.add(ratingTextField);
         
         rateMediaFrame.add(updateButton);
+        rateMediaFrame.add(infoButton);
         rateMediaFrame.add(backButton);
         rateMediaFrame.add(exitButton);
         
@@ -214,6 +226,9 @@ public class RateMediaUI implements TableModelListener
         // i = the index of the selected row
         int row = rateMediaTable.getSelectedRow();
         double rating = Double.parseDouble(ratingTextField.getText());
+        String theName = nameTextField.getText();
+        String theArtist = artistTextField.getText();
+        double theLength = Double.parseDouble(lengthTextField.getText());
                 
         if(row >= 0) 
         {
@@ -223,10 +238,22 @@ public class RateMediaUI implements TableModelListener
             }
             else
             {
-                theMediaListCntl.updateName(nameTextField.getText(), row, 0);
-                theMediaListCntl.updateArtist(artistTextField.getText(), row, 1);
-                theMediaListCntl.updateDoubleLength(lengthTextField.getText(), row, 2);
-                theMediaListCntl.updateDoubleRating(ratingTextField.getText(), row, 3);
+                if(theName.equalsIgnoreCase("Select Row") || theArtist.equalsIgnoreCase("Select Row") || theLength == 0)
+                {
+                    System.err.println("Update Error. SELECT A ROW.");
+                }
+                else if(row == -1)
+                {
+                    System.err.println("Update Error. SELECT A ROW.");
+                }
+                else
+                {
+                    theMediaListCntl.updateName(nameTextField.getText(), row, 0);
+                    theMediaListCntl.updateArtist(artistTextField.getText(), row, 1);
+                    theMediaListCntl.updateDoubleLength(lengthTextField.getText(), row, 2);
+                    theMediaListCntl.updateDoubleRating(ratingTextField.getText(), row, 3);
+                }
+                
             }
         }
         else
@@ -234,6 +261,21 @@ public class RateMediaUI implements TableModelListener
             System.err.println("Update Error. SELECT A ROW.");
         }
             
+    }
+    
+    public void infoButtonActionPerformed(ActionEvent evt)
+    {
+        int row = rateMediaTable.getSelectedRow();
+        
+        if(row == -1)
+        {
+            System.err.println("Media Info Error. SELECT A ROW.");
+        }
+        else
+        {
+            this.rateMediaFrame.setVisible(false);
+            this.theRateMediaDetailsUI = new RateMediaDetailsUI(this.theMediaListCntl, row, "rate");
+        }
     }
     
     public void mouseClickedActionPerformed(MouseEvent evt)

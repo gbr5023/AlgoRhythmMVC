@@ -18,6 +18,7 @@ package algorhythmmvc;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
 import javax.swing.*;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
@@ -28,6 +29,7 @@ public class crudSongUI implements TableModelListener
 {
     private JFrame crudSongFrame;
     private JPanel crudSongPanel;
+    private ArrayList<Song> theCRUDSongList;
     //private JPanel crudFieldsPanel;
     //private JPanel crudButtonPanel;
     //private JPanel regularButtonPanel;
@@ -50,11 +52,13 @@ public class crudSongUI implements TableModelListener
     
     private JButton addButton;
     private JButton updateButton;
+    private JButton infoButton;
     private JButton deleteButton;
     private JButton backButton;
     private JButton exitButton;
     
     private MediaListCntl theMediaListCntl;
+    private RateMediaDetailsUI theRateMediaDetailsUI;
     
     public crudSongUI(MediaListCntl parentMediaListCntl)
     {
@@ -65,6 +69,7 @@ public class crudSongUI implements TableModelListener
     
     public void setTheLayout()
     {
+        
         crudSongFrame = new JFrame("Create, Read, Update, Delete Media");
         
         crudSongTable = new JTable(this.theCRUDSongTableModel);
@@ -119,6 +124,7 @@ public class crudSongUI implements TableModelListener
         addButton = new JButton("Add");
         updateButton = new JButton("Update");
         deleteButton = new JButton("Delete");
+        infoButton = new JButton("Media Info");
         backButton = new JButton("Back");
         exitButton = new JButton("Exit");
         
@@ -132,7 +138,7 @@ public class crudSongUI implements TableModelListener
         lengthTextField.setBounds(530, 220, 100, 30);
         ratingTextField.setBounds(760, 220, 100, 30);
         
-        addButton.setBounds(260, 260, 100, 25);
+        addButton.setBounds(200, 260, 100, 25);
             addButton.addActionListener(new ActionListener()
             {
                 @Override
@@ -141,7 +147,7 @@ public class crudSongUI implements TableModelListener
                     addButtonActionPerformed(evt);
                 }
             });
-        updateButton.setBounds(380, 260, 100, 25);
+        updateButton.setBounds(320, 260, 100, 25);
             updateButton.addActionListener(new ActionListener()
             {
                 @Override
@@ -150,7 +156,7 @@ public class crudSongUI implements TableModelListener
                     updateButtonActionPerformed(evt);
                 }
             });
-        deleteButton.setBounds(500, 260, 100, 25);
+        deleteButton.setBounds(440, 260, 100, 25);
             deleteButton.addActionListener(new ActionListener()
             {
                 @Override
@@ -158,7 +164,16 @@ public class crudSongUI implements TableModelListener
                 {
                     deleteButtonActionPerformed(evt);
                 }
-            });        
+            });
+        infoButton.setBounds(560, 260, 100, 25);
+            infoButton.addActionListener(new ActionListener()
+            {
+                @Override
+                public void actionPerformed(ActionEvent evt)
+                {
+                    infoButtonActionPerformed(evt);
+                }
+            });
         backButton.setBounds(320, 340, 100, 25);
             backButton.addActionListener(new ActionListener()
             {
@@ -219,6 +234,7 @@ public class crudSongUI implements TableModelListener
         
         crudSongFrame.add(addButton);
         crudSongFrame.add(updateButton);
+        crudSongFrame.add(infoButton);
         crudSongFrame.add(deleteButton);
         crudSongFrame.add(backButton);
         crudSongFrame.add(exitButton);
@@ -234,6 +250,16 @@ public class crudSongUI implements TableModelListener
     public void setCRUDSongTable()
     {
         theMediaListCntl.setCRUDSongTable(crudSongTable);
+    }
+    
+    public void mouseClickedActionPerformed(MouseEvent evt)
+    {
+        int i = crudSongTable.getSelectedRow();
+            
+        nameTextField.setText(theCRUDSongTableModel.getValueAt(i, 0).toString());
+        artistTextField.setText(theCRUDSongTableModel.getValueAt(i, 1).toString());
+        lengthTextField.setText(theCRUDSongTableModel.getValueAt(i, 2).toString());
+        ratingTextField.setText(theCRUDSongTableModel.getValueAt(i, 3).toString());
     }
     
     public void addButtonActionPerformed(ActionEvent evt)
@@ -289,14 +315,19 @@ public class crudSongUI implements TableModelListener
             
     }
     
-    public void mouseClickedActionPerformed(MouseEvent evt)
+    public void infoButtonActionPerformed(ActionEvent evt)
     {
-        int i = crudSongTable.getSelectedRow();
-            
-            nameTextField.setText(theCRUDSongTableModel.getValueAt(i, 0).toString());
-            artistTextField.setText(theCRUDSongTableModel.getValueAt(i, 1).toString());
-            lengthTextField.setText(theCRUDSongTableModel.getValueAt(i, 2).toString());
-            ratingTextField.setText(theCRUDSongTableModel.getValueAt(i, 3).toString());
+        int row = crudSongTable.getSelectedRow();
+        
+        if(row == -1)
+        {
+            System.err.println("Media Info Error. SELECT A ROW.");
+        }
+        else
+        {
+            this.crudSongFrame.setVisible(false);
+            this.theRateMediaDetailsUI = new RateMediaDetailsUI(this.theMediaListCntl, row, "crud");
+        } 
     }
     
     public void deleteButtonActionPerformed(ActionEvent evt)

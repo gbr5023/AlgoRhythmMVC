@@ -16,6 +16,7 @@ You can work with a partner on this problem
 
 package algorhythmmvc;
 
+import java.util.ArrayList;
 import javax.swing.JTable;
 
 public class MediaListCntl 
@@ -32,27 +33,36 @@ public class MediaListCntl
     private CRUDSongTableModel theCRUDSongTableModel;
     private JTable CRUDSongTable;
     //private CRUDSongTableModel theCRUDSongTableModel;
+    private ArrayList<Song> newSongList;
     
     public MediaListCntl()
     {
         System.out.println("Made it to MediaListCntl");
+        theSongList = new SongList();
         requestCRUDMenuUI();
+    }
+    
+    public void updateTheSongList()
+    {
+        newSongList = theCRUDSongTableModel.getUpdatedSongDetailList();
+        theSongList.setSongList(newSongList);
     }
     
     public Song getTheSongList(int row)
     {
-        theSongList = new SongList();
+        updateTheSongList();
         Song theSongDetail = theSongList.getSongDetail(row);
         
         return theSongDetail;
     }
     
-    /*
-    public Song getTheCRUDSongList(int row)
+    
+    public ArrayList<Song> getTheCRUDSongList()
     {
-        theSongList = new SongList();  
+        updateTheSongList();
+        return this.newSongList;
     }
-    */
+    
     
     public void setCRUDSongTable(JTable theCRUDSongTable)
     {

@@ -24,6 +24,7 @@ import java.util.ArrayList;
  */
 public class SongList extends MediaList
 {
+    private MediaListCntl theMediaListCntl;
     private ArrayList<Song> theMediaList;
     private ArrayList<String> theMediaNameList;
     private Song theSong;
@@ -35,6 +36,12 @@ public class SongList extends MediaList
         if(theMediaList == null)
         {
             populateSongList();
+        }
+        else
+        {
+            populateSongList();
+            theMediaListCntl.updateTheSongList();
+            theMediaList = getTheSongList();
         }
     }
     
@@ -54,6 +61,11 @@ public class SongList extends MediaList
         String colMediaNameArray[] = {"Song"};
     }
     
+    public void setSongList(ArrayList<Song> newSongList)
+    {
+        this.theMediaList = newSongList;
+    }
+    
     public void addRow(Song newSong)
     {
         theMediaList.add(newSong);
@@ -61,7 +73,7 @@ public class SongList extends MediaList
     
     public Song getSongDetail(int row)
     {
-        return theMediaList.get(row);
+        return this.theMediaList.get(row);
     }
 
     @Override
