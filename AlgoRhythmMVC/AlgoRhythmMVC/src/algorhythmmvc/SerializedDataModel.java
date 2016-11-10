@@ -20,36 +20,42 @@ package algorhythmmvc;
 
 /**
  *
- * @author Gisward
+ * @author gbr5023
  */
-public class User 
+public class SerializedDataModel 
 {
-    private String username;
-    private char[] password;
+    private UserList theUserList;
+    private MediaList theMediaList;
     
-    public User(String newUsername, char[] newPassword)
+    public SerializedDataModel()
     {
-        this.username = newUsername;
-        this.password = newPassword;
+        if(theUserList == null)
+        {
+            theUserList = new UserList();
+        }
+        if(theMediaList == null)
+        {
+            theMediaList = new MediaList();
+        }
     }
     
-    public String getUsername()
+    public UserList getUserList()
     {
-        return this.username;
+        return theUserList;
     }
     
-    public void setUsername(String newUsername)
+    public MediaList getMediaList()
     {
-        this.username = newUsername;
+        return theMediaList;
     }
     
-    public char[] getPassword()
+    public void setUserList(UserList newUserList)
     {
-        return this.password;
+        theUserList = newUserList;
     }
     
-    public void setPassword(char[] newPassword)
+    public void setMediaList(MediaList newMediaList)
     {
-        this.password = newPassword;
+        theMediaList = newMediaList;
     }
 }
