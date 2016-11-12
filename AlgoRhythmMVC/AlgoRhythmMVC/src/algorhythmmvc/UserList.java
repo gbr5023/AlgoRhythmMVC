@@ -27,7 +27,6 @@ import java.util.ArrayList;
 public class UserList 
 {
     private ArrayList<User> theListOfUsers;
-    private User theUser;
     
     /**
      * UserList(): initializes ArrayList<User> theListOfUsers and adds a 100 new
@@ -37,12 +36,12 @@ public class UserList
     {
         theListOfUsers = new ArrayList<>();
 
-        for(int i = 0; i <= 100; i++)
+        for(int i = 0; i < 100; i++)
         {
             // add 100 new User objects of String username("giselle" + i) and
             // String literal password "abc123" which is converted into a character
             // array (.toCharArray()) which is the default type of JPasswordField
-            theListOfUsers.add(new User("giselle" + i, ("abc123").toCharArray()));
+            theListOfUsers.add(new User("giselle" + i, ("asdf").toCharArray()));
         }
     }
     

@@ -27,7 +27,11 @@ import java.util.ArrayList;
  */
 public class MediaList implements Serializable
 {
+    private MediaListCntl theMediaListCntl;
     private ArrayList<Media> theMediaList;
+    private ArrayList<String> theMediaNameList;
+    private String colMediaArray[] = {"Media Name", "Artist", "Length", "Avg Rating"};
+    private String colMediaNameArray[] = {"Media Name"};
    
     public MediaList()
     {
@@ -58,5 +62,31 @@ public class MediaList implements Serializable
         }
     }
     
-    
+    public Media getSongDetail(int row)
+    {
+        return this.theMediaList.get(row);
+    }
+
+    public String[] getColMediaArray() 
+    {
+        return this.colMediaArray;
+    }
+
+    public String[] getColMediaNameArray() 
+    {
+        return this.colMediaNameArray;
+    }      
+
+    public ArrayList<String> getTheMediaNameList() 
+    {
+        theMediaNameList = new ArrayList<>();
+        
+        for(int i = 0; i < this.theMediaList.size(); i++)
+        {
+            String theSongName = this.theMediaList.get(i).getMediaName();
+            theMediaNameList.add(theSongName);
+        }
+        
+        return theMediaNameList;
+    }
 }

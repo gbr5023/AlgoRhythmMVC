@@ -79,8 +79,9 @@ public abstract class Media implements Serializable
     public abstract void setMediaArtist(String newArtist);
     public abstract double getMediaLength();
     public abstract void setMediaLength(double newLength);
-    public abstract double setMediaAvgRating(double newRating);
+    //public abstract RatingList getRatingList();
+    //public abstract double setMediaAvgRating(double newRating);
     public abstract double getMediaAvgRating();
     public abstract ArrayList<Double> getMediaRatingList();
-    public abstract void addMediaRating(double newRating);
+    //public abstract void addMediaRating(double newRating);
 }

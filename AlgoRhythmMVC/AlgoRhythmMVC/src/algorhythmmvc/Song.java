@@ -30,8 +30,9 @@ public class Song extends Media
     private String artistName;
     private double songLength;
     private double songAvgRating;
-    private ArrayList<Double> songRatingList;
+    private ArrayList<Double> theMediaRatingList;
     private String spotifyURL = "";
+    RatingList theRatingList;
     
     public Song()
     {
@@ -53,16 +54,20 @@ public class Song extends Media
         this.spotifyURL = tempSongArray[4];
     }
     
-    public Song(String newSong, String newArtist, double newLength, double newRating)
+    public Song(double newRating)
     {
-        this.songRatingList = new ArrayList<>();
+        this.songAvgRating = newRating;
+    }
+    
+    /*
+    public Song(String newSong, String newArtist, double newLength)
+    {
+        this.theMediaRatingList = new ArrayList<>();
         this.songName = newSong;
         this.artistName = newArtist;
         this.songLength = newLength;
-        //this.songAvgRating = newRating;
-        this.songAvgRating = this.setMediaAvgRating(newRating);
     }
-    /*
+    
     public Song(String importSongString)
     {
         
@@ -76,7 +81,13 @@ public class Song extends Media
         
     }
     */
-   
+    public double getMediaAvgRating()
+    {
+        theRatingList.getMediaAvgRating();
+        
+        return this.songAvgRating;
+    }
+    
     @Override
     public String getMediaName()
     {
@@ -111,39 +122,10 @@ public class Song extends Media
     public void setMediaLength(double newLength)
     {
         this.songLength = newLength;
-    }
-    
-    public double setMediaAvgRating(double newRating) 
-    {
-        this.songRatingList.add(newRating);
-        double sum = 0.0;
-        for(int i = 0; i < this.songRatingList.size(); i++)
-        {
-            sum = (this.songRatingList.get(i) + sum);
-            this.songAvgRating = (sum / this.songRatingList.size());
-        }
-        //this.songAvgRating = Math.round(this.songAvgRating)
-        
-        return this.songAvgRating;
-    }
+    }  
 
     @Override
-    public double getMediaAvgRating() 
-    {
-        return this.songAvgRating;
+    public ArrayList<Double> getMediaRatingList() {
+        return this.theMediaRatingList;
     }
-    
-    @Override
-    public ArrayList<Double> getMediaRatingList() 
-    {
-        return this.songRatingList;
-    }
-
-    @Override
-    public void addMediaRating(double newRating) 
-    {
-
-    }
-
-    
 }

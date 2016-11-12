@@ -23,13 +23,12 @@ import java.util.ArrayList;
 /**
  *
  * @author Gisward
- */
-public class SongList extends MediaList
+ 
+public class SongList
 {
     private MediaListCntl theMediaListCntl;
-    private ArrayList<Song> theMediaList;
+    private ArrayList<Media> theMediaList;
     private ArrayList<String> theMediaNameList;
-    private Song theSong;
     private String colMediaArray[] = {"Song Name", "Artist", "Length", "Avg Rating"};
     private String colMediaNameArray[] = {"Song"};
     
@@ -50,22 +49,17 @@ public class SongList extends MediaList
     public void populateSongList()
     {
         theMediaList = new ArrayList<>();
-        theMediaList.add(new Song("Shake It Off", "Taylor Swift", 3.5, 3));
-        theMediaList.add(new Song("Sweater Weather", "The Neighbourhood", 4.0, 5));
-        theMediaList.add(new Song("Yeezus", "Kanye West", 3.4, 4));
-        theMediaList.add(new Song("The Eye", "Infinite", 4.3, 5));
-        theMediaList.add(new Song("Anaconda", "Nicki Minaj", 3.2, 5));
+        theMediaList.add(new Song("Shake It Off", "Taylor Swift", 3.5));
+        theMediaList.add(new Song("Sweater Weather", "The Neighbourhood", 4.0));
+        theMediaList.add(new Song("Yeezus", "Kanye West", 3.4));
+        theMediaList.add(new Song("The Eye", "Infinite", 4.3));
+        theMediaList.add(new Song("Anaconda", "Nicki Minaj", 3.2));
         for(int i = 1; i <= 30; i++)
         {
-            theMediaList.add(new Song("Hotline Bling " + i, "Drake", 3.9, 3));
+            theMediaList.add(new Song("Hotline Bling " + i, "Drake", 3.9));
         }
         String colMediaArray[] = {"Media Name", "Artist", "Length", "Rating"};
         String colMediaNameArray[] = {"Song"};
-    }
-    
-    public void setSongList(ArrayList<Song> newSongList)
-    {
-        this.theMediaList = newSongList;
     }
     
     public void addRow(Song newSong)
@@ -73,36 +67,6 @@ public class SongList extends MediaList
         theMediaList.add(newSong);
     }
     
-    public Song getSongDetail(int row)
-    {
-        return this.theMediaList.get(row);
-    }
-
-    public String[] getColMediaArray() 
-    {
-        return this.colMediaArray;
-    }
-
-    public String[] getColMediaNameArray() 
-    {
-        return this.colMediaNameArray;
-    }      
-
-    public ArrayList<Song> getTheSongList()
-    {
-        return this.theMediaList;
-    }
-
-    public ArrayList<String> getTheMediaNameList() 
-    {
-        theMediaNameList = new ArrayList<>();
-        
-        for(int i = 0; i < this.theMediaList.size(); i++)
-        {
-            String theSongName = this.theMediaList.get(i).getMediaName();
-            theMediaNameList.add(theSongName);
-        }
-        
-        return theMediaNameList;
-    }
+    
 }
+*/

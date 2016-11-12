@@ -28,7 +28,7 @@ import javax.swing.table.AbstractTableModel;
  */
 public class CRUDSongTableModel extends AbstractTableModel
 {
-    private ArrayList<Song> theSongDetailList; //initialized by theMediaList.getTheMediaNameList()
+    private ArrayList<Media> theSongDetailList; //initialized by theMediaList.getTheMediaNameList()
     private SongList theMediaList; //must access getter methods to initialize ArrayList<String> theMediaNameList & colMediaNameArray[]
     private String colMediaArray[]; // initialized by theMediaList.getColMediaNameArray()
 
@@ -39,7 +39,7 @@ public class CRUDSongTableModel extends AbstractTableModel
         colMediaArray = theMediaList.getColMediaArray();
     }
     
-    public ArrayList<Song> getUpdatedSongDetailList()
+    public ArrayList<Media> getUpdatedSongDetailList()
     {
         return this.theSongDetailList;
     }
@@ -135,7 +135,7 @@ public class CRUDSongTableModel extends AbstractTableModel
     public Object getValueAt(int row, int column) 
     {
         
-        Song theSong = theSongDetailList.get(row);
+        Media theSong = theSongDetailList.get(row);
         switch(column)
         {
             case 0:

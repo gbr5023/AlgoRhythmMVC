@@ -18,16 +18,43 @@
 
 package algorhythmmvc;
 
-public class AlgoRhythmMVC 
-{
+import java.util.ArrayList;
 
-    /*
-        main(): Begins program Takes program to theLoginCntl.
-    */
-    public static void main(String[] args) 
+/**
+ *
+ * @author Gisward
+ */
+public class RatingList 
+{
+    ArrayList<Rating> songRatingList = new ArrayList<>(); 
+    double songAvgRating;
+    
+    public RatingList(double newRating)
     {
-        LoginCntl theLoginCntl = new LoginCntl();
-        //ExternalDataCntl theExternalDataCntl = new ExternalDataCntl();
+        this.songRatingList.add(new Rating(newRating));
+    }
+    
+    private void calculateMediaAvgRating() 
+    {
+        double sum = 0.0;
+        //double currentRating = 0.0;
+        for(int i = 0; i < this.songRatingList.size(); i++)
+        {
+            double currentRating = this.songRatingList.get(i).getRating();
+            sum = (currentRating + sum);
+            this.songAvgRating = (sum / this.songRatingList.size());
+        }
+        //this.songAvgRating = Math.round(this.songAvgRating)
     }
 
+    public double getMediaAvgRating() 
+    {
+        this.calculateMediaAvgRating();
+        return this.songAvgRating;
+    }
+    
+    public ArrayList<Rating> getMediaRatingList() 
+    {
+        return this.songRatingList;
+    }
 }

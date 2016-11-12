@@ -94,9 +94,7 @@ public class SerializedDataCntl
         catch(ClassNotFoundException err)
         {
             err.getStackTrace();
-        }
-        
-        
+        }     
     }
     
     public void writeSerializedDataModel()
@@ -117,16 +115,4 @@ public class SerializedDataCntl
             err.printStackTrace();
         }
     }
-    
-    /*
-    public MediaList getMediaList()
-    {
-        
-    }
-    
-    public ArrayList<Media> getListOfMedia()
-    {
-        
-    }
-*/
 }

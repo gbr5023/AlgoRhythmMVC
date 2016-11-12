@@ -3,13 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Gisward/Desktop/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/MainMenuUI.java</file>
-            <file>file:/C:/Users/Gisward/Desktop/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/RateMediaUI.java</file>
-            <file>file:/C:/Users/Gisward/Desktop/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/MediaListCntl.java</file>
-            <file>file:/C:/Users/Gisward/Desktop/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/NavigationCntl.java</file>
-            <file>file:/C:/Users/Gisward/Desktop/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/CRUDMenuUI.java</file>
-            <file>file:/C:/Users/Gisward/Desktop/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/CRUDSongTableModel.java</file>
-            <file>file:/C:/Users/Gisward/Desktop/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/crudSongUI.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/SerializedDataCntl.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/MediaListCntl.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/LoginCntl.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/MediaDetailUI.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/SerializedDataModel.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/MediaList.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/CRUDSongTableModel.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/RatingList.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/AlgoRhythmMVC.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/RateMediaDetailsUI.java</file>
+            <file>file:/C:/Users/Gisward/Documents/AlgoRhythmMVC/AlgoRhythmMVC/AlgoRhythmMVC/src/algorhythmmvc/ExternalDataCntl.java</file>
         </group>
     </open-files>
 </project-private>

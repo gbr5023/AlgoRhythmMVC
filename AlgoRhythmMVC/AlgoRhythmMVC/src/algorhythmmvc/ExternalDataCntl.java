@@ -21,6 +21,7 @@ package algorhythmmvc;
 import java.io.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.util.Scanner;
 /**
@@ -47,8 +48,8 @@ public class ExternalDataCntl
             File externalDataFile = new File(EXTERNAL_DATA_PATH + SONG_FILE_NAME); //File() arg needs a path
             Scanner in = new Scanner(externalDataFile); //have Scanner scan the File for input
             int count = 0;
-            //ArrayList<Media> tempMediaList = SerializedDataCntl.getSerializedDataCntl().getSerializedDataModel().getMediaList.getListOfMedia;
-            //tempMediaList.clear();
+            ArrayList<Media> tempMediaList = SerializedDataCntl.getSerializedDataCntl().getSerializedDataModel().getMediaList().getTheMediaList();
+            tempMediaList.clear();
             
             
             while(in.hasNextLine())
