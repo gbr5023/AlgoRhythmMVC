@@ -39,7 +39,7 @@ import javax.swing.table.JTableHeader;
 public class RateMediaDetailsUI 
 {
     private MediaListCntl theMediaListCntl;
-    private ArrayList<Song> theSongList;
+    private ArrayList<Media> theMediaList;
     private int row; // row of the mediaList ArrayList in SongList class
     private JTextArea rateMediaDetailTextArea;
     private JFrame rateMediaDetailFrame;
@@ -56,7 +56,7 @@ public class RateMediaDetailsUI
     public RateMediaDetailsUI(MediaListCntl parentMediaListCntl, int row, String newPreviousUI)
     {
         this.theMediaListCntl = parentMediaListCntl;
-        theSongList = theMediaListCntl.getTheCRUDSongList();
+        theMediaList = theMediaListCntl.getTheCRUDSongList();
         this.row = row;
         this.previousUI = newPreviousUI;
         setTheLayout();
@@ -64,7 +64,7 @@ public class RateMediaDetailsUI
     
     private void setTheLayout()
     { 
-        Song theMedia = theMediaListCntl.getTheSongList(row);
+        Media theMedia = theMediaListCntl.getTheSongList(row);
         ArrayList<Double> theRatingList = theMedia.getMediaRatingList();
         rateMediaDetailTextArea = new JTextArea(
                                             "Media: " + theMedia.getMediaName() +

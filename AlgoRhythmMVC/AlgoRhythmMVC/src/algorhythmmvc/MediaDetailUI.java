@@ -49,11 +49,11 @@ public class MediaDetailUI
     
     private void setTheLayout()
     {
-        Song theMedia = theMediaListCntl.getTheSongList(row);
+        Media theMedia = theMediaListCntl.getTheMediaList(row);
         mediaDetailTextArea = new JTextArea(
                                             "Media: " + theMedia.getMediaName() +
                                             "\nArtist: " + theMedia.getMediaArtist() +
-                                            "\nLength: " + theMedia.getMediaLength() + 
+                                            "\nLength: " + theMedia.getMediaLength() +
                                             "\nAverage Rating: " + theMedia.getMediaAvgRating()
                                            );
         mediaDetailTextArea.setFont(new Font("Arial", Font.PLAIN, 20));

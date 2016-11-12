@@ -57,6 +57,7 @@ public class Song extends Media
     public Song(double newRating)
     {
         this.songAvgRating = newRating;
+        theRatingList = new RatingList(this.songAvgRating);
     }
     
     /*

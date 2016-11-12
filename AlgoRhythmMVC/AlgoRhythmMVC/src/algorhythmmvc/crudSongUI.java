@@ -31,7 +31,7 @@ public class crudSongUI implements TableModelListener
 {
     private JFrame crudSongFrame;
     private JPanel crudSongPanel;
-    private ArrayList<Song> theCRUDSongList;
+    private ArrayList<Media> theCRUDMediaList;
     //private JPanel crudFieldsPanel;
     //private JPanel crudButtonPanel;
     //private JPanel regularButtonPanel;
@@ -285,7 +285,7 @@ public class crudSongUI implements TableModelListener
         }
         else
         {
-            Song row = new Song(name, artist, length, rating);
+            Media row = new Media(name, artist, length, rating);
             theMediaListCntl.addRow(row);
         }
     }

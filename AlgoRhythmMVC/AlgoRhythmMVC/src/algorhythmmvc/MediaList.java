@@ -30,7 +30,7 @@ public class MediaList implements Serializable
     private MediaListCntl theMediaListCntl;
     private ArrayList<Media> theMediaList;
     private ArrayList<String> theMediaNameList;
-    private String colMediaArray[] = {"Media Name", "Artist", "Length", "Avg Rating"};
+    private String colMediaArray[] = {"Media Name", "Artist", "Length"};
     private String colMediaNameArray[] = {"Media Name"};
    
     public MediaList()
@@ -41,6 +41,11 @@ public class MediaList implements Serializable
             ExternalDataCntl theExternalDataCntl = new ExternalDataCntl();
             
         }
+    }
+    
+    public MediaList(Media newMedia)
+    {
+        
     }
     
     public ArrayList<Media> getTheMediaList()
@@ -62,7 +67,7 @@ public class MediaList implements Serializable
         }
     }
     
-    public Media getSongDetail(int row)
+    public Media getMediaDetail(int row)
     {
         return this.theMediaList.get(row);
     }

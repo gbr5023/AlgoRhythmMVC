@@ -23,6 +23,7 @@ public class LoginCntl
     private UserList theUserList; // declare theUserList object of class UserList
     private LoginUIv2 theLoginUIv2; // declare theLoginUIv2 object of class LoginUIv2
     private NavigationCntl theNavigationCntl; // declare theNavigationCntl object of class NavigationCntl
+    //private 
     
     /**
      * LoginCntl(): Notifies that the program is now at the LoginCntl.

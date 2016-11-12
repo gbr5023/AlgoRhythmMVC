@@ -23,7 +23,7 @@ import javax.swing.JTable;
 
 public class MediaListCntl 
 {
-    private SongList theSongList;
+    private SerializedDataCntl theSerializedDataCntl;
     private NavigationCntl theNavigationCntl;
     private CRUDMenuUI theCRUDMenuUI;
     private RateMediaUI theRateMediaUI;
@@ -35,34 +35,34 @@ public class MediaListCntl
     private CRUDSongTableModel theCRUDSongTableModel;
     private JTable CRUDSongTable;
     //private CRUDSongTableModel theCRUDSongTableModel;
-    private ArrayList<Media> newSongList;
+    //private ArrayList<Media> newMediaList;
     
     public MediaListCntl()
     {
         System.out.println("Made it to MediaListCntl");
-        theSongList = new SongList();
+        //theMediaList = new MediaList();
         requestCRUDMenuUI();
     }
-    
+    /*
     public void updateTheSongList()
     {
-        newSongList = theCRUDSongTableModel.getUpdatedSongDetailList();
-        theSongList.setSongList(newSongList);
+        newMediaList = theCRUDSongTableModel.getUpdatedMediaDetailList();
+        theMediaList.setSongList(newMediaList);
     }
-    
-    public Media getTheSongList(int row)
+    */
+    public Media getTheMediaList(int row)
     {
-        updateTheSongList();
-        Media theSongDetail = theSongList.getSongDetail(row);
+        //updateTheSongList();
+        Media theMediaDetail = theMediaList.getMediaDetail(row);
         
-        return theSongDetail;
+        return theMediaDetail;
     }
     
     
     public ArrayList<Media> getTheCRUDSongList()
     {
-        updateTheSongList();
-        return this.newSongList;
+        //updateTheSongList();
+        return this.getTheCRUDSongList();
     }
     
     

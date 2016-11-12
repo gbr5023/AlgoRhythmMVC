@@ -29,33 +29,33 @@ public class SerializedDataModel
     
     public SerializedDataModel()
     {
-        if(theUserList == null)
+        if(this.theUserList == null)
         {
-            theUserList = new UserList();
+            this.theUserList = new UserList();
         }
-        if(theMediaList == null)
+        if(this.theMediaList == null)
         {
-            theMediaList = new MediaList();
+            this.theMediaList = new MediaList();
         }
     }
     
     public UserList getUserList()
     {
-        return theUserList;
+        return this.theUserList;
     }
     
     public MediaList getMediaList()
     {
-        return theMediaList;
+        return this.theMediaList;
     }
     
     public void setUserList(UserList newUserList)
     {
-        theUserList = newUserList;
+        this.theUserList = newUserList;
     }
     
     public void setMediaList(MediaList newMediaList)
     {
-        theMediaList = newMediaList;
+        this.theMediaList = newMediaList;
     }
 }

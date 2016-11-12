@@ -30,7 +30,7 @@ import java.util.Scanner;
  */
 public class ExternalDataCntl 
 {
-    private final String EXTERNAL_DATA_PATH = "algorhythmmvc_data\\";
+    private final String EXTERNAL_DATA_PATH = "algorhythmmvc_data";
     private final String SONG_FILE_NAME = "songlist.tsv";
     
     public ExternalDataCntl()

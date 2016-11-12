@@ -19,7 +19,7 @@
 package algorhythmmvc;
 
 import java.util.ArrayList;
-import javax.swing.event.TableModelEvent;
+//mport javax.swing.event.TableModelEvent;
 import javax.swing.table.AbstractTableModel;
 
 /**
@@ -28,32 +28,32 @@ import javax.swing.table.AbstractTableModel;
  */
 public class CRUDSongTableModel extends AbstractTableModel
 {
-    private ArrayList<Media> theSongDetailList; //initialized by theMediaList.getTheMediaNameList()
-    private SongList theMediaList; //must access getter methods to initialize ArrayList<String> theMediaNameList & colMediaNameArray[]
+    private ArrayList<Media> theMediaDetailList; //initialized by theMediaList.getTheMediaNameList()
+    private MediaList theMediaList; //must access getter methods to initialize ArrayList<String> theMediaNameList & colMediaNameArray[]
     private String colMediaArray[]; // initialized by theMediaList.getColMediaNameArray()
 
     public CRUDSongTableModel()
     {
-        theMediaList = new SongList();
-        theSongDetailList = theMediaList.getTheSongList();
+        theMediaList = new MediaList();
+        theMediaDetailList = theMediaList.getTheMediaList();
         colMediaArray = theMediaList.getColMediaArray();
     }
     
-    public ArrayList<Media> getUpdatedSongDetailList()
+    public ArrayList<Media> getUpdatedMediaDetailList()
     {
-        return this.theSongDetailList;
+        return this.theMediaDetailList;
     }
     
     public void addRow(Song rowData)
     {
-        theSongDetailList.add(rowData);
+        theMediaDetailList.add(rowData);
         //super.fireTableRowsInserted(theSongDetailList.size() - 1, theSongDetailList.size() - 1);
         super.fireTableDataChanged();
     }
     
     public void removeRow(int row)
     {
-        theSongDetailList.remove(row);
+        theMediaDetailList.remove(row);
         //Song theRowRemoved = theSongDetailList.get(row);
         //super.fireTableRowsDeleted(theSongDetailList.indexOf(theRowRemoved), theSongDetailList.indexOf(theRowRemoved));
         //fireTableRowsDeleted(row, row);
@@ -62,7 +62,7 @@ public class CRUDSongTableModel extends AbstractTableModel
     
     public void updateName(String theName, int row, int column)
     {
-        theSongDetailList.get(row).setMediaName(theName);
+        theMediaDetailList.get(row).setMediaName(theName);
         //Song theRow = theSongDetailList.get(row);
         //theRow.setMediaName(theName);
         //theSongDetailList.set(row, theRow);
@@ -73,7 +73,7 @@ public class CRUDSongTableModel extends AbstractTableModel
     
     public void updateArtist(String theArtist, int row, int column)
     {
-        theSongDetailList.get(row).setMediaArtist(theArtist);
+        theMediaDetailList.get(row).setMediaArtist(theArtist);
         //Song theRow = theSongDetailList.get(row);
         //theRow.setMediaArtist(theArtist);
         //theSongDetailList.set(row, theRow);
@@ -86,7 +86,7 @@ public class CRUDSongTableModel extends AbstractTableModel
     {
         //Song theRow = theSongDetailList.get(row);
         double length = Double.parseDouble(theDoubleLength);
-        theSongDetailList.get(row).setMediaLength(length);
+        theMediaDetailList.get(row).setMediaLength(length);
         //theRow.setMediaLength(length);
         //theSongDetailList.set(row, theRow);
         //super.fireTableRowsUpdated(row, row);        
@@ -98,7 +98,8 @@ public class CRUDSongTableModel extends AbstractTableModel
     {
         //Song theRow = theSongDetailList.get(row);
         double rating = Double.parseDouble(theDoubleRating);
-        theSongDetailList.get(row).setMediaAvgRating(rating);
+        
+        theMediaDetailList.get(row).getMediaAvgRating();
         //theRow.setMediaRating(rating);
         //theSongDetailList.set(row, theRow);
         //super.fireTableRowsUpdated(row, row);
@@ -109,7 +110,7 @@ public class CRUDSongTableModel extends AbstractTableModel
     @Override
     public int getRowCount() 
     {
-        return theSongDetailList.size();
+        return theMediaDetailList.size();
     }
 
     @Override
@@ -135,7 +136,7 @@ public class CRUDSongTableModel extends AbstractTableModel
     public Object getValueAt(int row, int column) 
     {
         
-        Media theSong = theSongDetailList.get(row);
+        Media theSong = theMediaDetailList.get(row);
         switch(column)
         {
             case 0:
