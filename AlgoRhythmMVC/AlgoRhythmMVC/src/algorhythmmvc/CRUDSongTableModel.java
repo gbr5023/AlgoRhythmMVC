@@ -44,7 +44,7 @@ public class CRUDSongTableModel extends AbstractTableModel
         return this.theMediaDetailList;
     }
     
-    public void addRow(Song rowData)
+    public void addRow(Media rowData)
     {
         theMediaDetailList.add(rowData);
         //super.fireTableRowsInserted(theSongDetailList.size() - 1, theSongDetailList.size() - 1);

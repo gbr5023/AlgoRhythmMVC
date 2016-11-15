@@ -285,7 +285,7 @@ public class crudSongUI implements TableModelListener
         }
         else
         {
-            Media row = new Media(name, artist, length, rating);
+            Media row = new Song(name, artist, length) {};
             theMediaListCntl.addRow(row);
         }
     }

@@ -64,7 +64,7 @@ public class RateMediaDetailsUI
     
     private void setTheLayout()
     { 
-        Media theMedia = theMediaListCntl.getTheSongList(row);
+        Media theMedia = theMediaListCntl.getTheMediaList(row);
         ArrayList<Double> theRatingList = theMedia.getMediaRatingList();
         rateMediaDetailTextArea = new JTextArea(
                                             "Media: " + theMedia.getMediaName() +

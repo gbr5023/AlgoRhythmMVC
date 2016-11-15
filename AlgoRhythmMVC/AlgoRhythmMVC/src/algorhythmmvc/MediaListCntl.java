@@ -36,6 +36,7 @@ public class MediaListCntl
     private JTable CRUDSongTable;
     //private CRUDSongTableModel theCRUDSongTableModel;
     //private ArrayList<Media> newMediaList;
+    private MediaList theMediaList;
     
     public MediaListCntl()
     {
@@ -122,9 +123,9 @@ public class MediaListCntl
         return theCRUDSongTableModel;
     }
     
-    public void addRow(Song newSong)
+    public void addRow(Media newMedia)
     {
-        theCRUDSongTableModel.addRow(newSong);
+        theCRUDSongTableModel.addRow(newMedia);
     }
     
     public void removeRow(int row)
