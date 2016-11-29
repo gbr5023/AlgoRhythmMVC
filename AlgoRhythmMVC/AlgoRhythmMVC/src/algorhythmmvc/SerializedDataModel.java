@@ -18,11 +18,13 @@
 
 package algorhythmmvc;
 
+import java.io.Serializable;
+
 /**
  *
  * @author gbr5023
  */
-public class SerializedDataModel 
+public class SerializedDataModel implements Serializable
 {
     private UserList theUserList;
     private MediaList theMediaList;

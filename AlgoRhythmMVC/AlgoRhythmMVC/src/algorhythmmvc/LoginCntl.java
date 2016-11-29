@@ -23,7 +23,6 @@ public class LoginCntl
     private UserList theUserList; // declare theUserList object of class UserList
     private LoginUIv2 theLoginUIv2; // declare theLoginUIv2 object of class LoginUIv2
     private NavigationCntl theNavigationCntl; // declare theNavigationCntl object of class NavigationCntl
-    //private 
     
     /**
      * LoginCntl(): Notifies that the program is now at the LoginCntl.
@@ -33,6 +32,7 @@ public class LoginCntl
     public LoginCntl()
     {
         System.out.println("Made it to LoginCntl");
+        //theUserList = new UserList();
         theUserList = new UserList();
         theLoginUIv2 = new LoginUIv2(this);
     }

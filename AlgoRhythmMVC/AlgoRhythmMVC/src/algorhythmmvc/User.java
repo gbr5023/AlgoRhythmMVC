@@ -18,11 +18,13 @@
 
 package algorhythmmvc;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Gisward
  */
-public class User 
+public class User implements Serializable
 {
     private String username;
     private char[] password;

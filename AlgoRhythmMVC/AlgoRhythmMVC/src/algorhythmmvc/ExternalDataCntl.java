@@ -45,7 +45,7 @@ public class ExternalDataCntl
     {
         try
         {
-            File externalDataFile = new File(EXTERNAL_DATA_PATH + SONG_FILE_NAME); //File() arg needs a path
+            File externalDataFile = new File(EXTERNAL_DATA_PATH, SONG_FILE_NAME); //File() arg needs a path
             Scanner in = new Scanner(externalDataFile); //have Scanner scan the File for input
             int count = 0;
             ArrayList<Media> tempMediaList = SerializedDataCntl.getSerializedDataCntl().getSerializedDataModel().getMediaList().getTheMediaList();

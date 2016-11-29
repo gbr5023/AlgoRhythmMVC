@@ -24,13 +24,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 //import java.util.ArrayList;
 
 /**
  *
  * @author gbr5023
  */
-public class SerializedDataCntl 
+public class SerializedDataCntl implements Serializable
 {
     private SerializedDataModel theSerializedDataModel;
     private static SerializedDataCntl theSerializedDataCntl;
@@ -38,7 +39,7 @@ public class SerializedDataCntl
     private final String ALGORHYTHMMVC_DATA_FILE_NAME = "songlist.tsv";
     //private ExternalDataCntl theExternalDataCntl;
     
-    private SerializedDataCntl()
+    public SerializedDataCntl()
     {
         getSerializedDataModel();
     }
@@ -74,7 +75,7 @@ public class SerializedDataCntl
     {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
-        String filePath = EXTERNAL_DATA_PATH + ALGORHYTHMMVC_DATA_FILE_NAME;
+        String filePath = EXTERNAL_DATA_PATH + "/" + ALGORHYTHMMVC_DATA_FILE_NAME;
         
         try
         {
@@ -101,7 +102,7 @@ public class SerializedDataCntl
     {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
-        String filePath = EXTERNAL_DATA_PATH + ALGORHYTHMMVC_DATA_FILE_NAME;
+        String filePath = EXTERNAL_DATA_PATH + "/" + ALGORHYTHMMVC_DATA_FILE_NAME;
         
         try
         {
