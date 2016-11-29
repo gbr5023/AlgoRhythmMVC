@@ -1,4 +1,20 @@
 /*
+• Add search and sort performance test functionality to AlgoRhythm
+• This will include the following
+    • A Test Controller to manage the performance test
+        – Have 3 representations of the Song data including 
+            – ArrayList(native)
+            – array
+            – and one other Java collection of your choice
+        – A Stopwatch
+            – measure the performance of search and sort operations on the 
+              3 different data representations
+    • A Test UI to run the tests and display test results
+    • TestUI will allow users to run timed tests for:
+        – sorting the 3 different date representations
+        – searching the 3 different representations
+• Due Monday Dec 5 @11:50pm
+
 • You can work with a partner on this problem 
 • Implement Media (Song) import and app-wide data serialization 
 • Uses should be able to:
@@ -26,8 +42,8 @@ public class AlgoRhythmMVC
     */
     public static void main(String[] args) 
     {
-        LoginCntl theLoginCntl = new LoginCntl();
-        //ExternalDataCntl theExternalDataCntl = new ExternalDataCntl();
+        //LoginCntl theLoginCntl = new LoginCntl();
+        ExternalDataCntl theExternalDataCntl = new ExternalDataCntl();
     }
 
 }

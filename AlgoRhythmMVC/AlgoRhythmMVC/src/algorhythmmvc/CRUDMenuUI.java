@@ -279,13 +279,13 @@ public class CRUDMenuUI extends JFrame implements ActionListener
         {
             if(rateSelected)
             {
-                mediaMenuFrame.setVisible(false);
-                this.theMediaListCntl.requestRateMediaUI();
+                //mediaMenuFrame.setVisible(false);
+                //this.theMediaListCntl.requestRateMediaUI();
             }
             else
             {
-                mediaMenuFrame.setVisible(false);
-                this.theMediaListCntl.requestCRUDSongUI();
+                //mediaMenuFrame.setVisible(false);
+                //this.theMediaListCntl.requestCRUDSongUI();
             }
             
         }

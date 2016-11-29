@@ -35,8 +35,8 @@ public class SerializedDataCntl implements Serializable
 {
     private SerializedDataModel theSerializedDataModel;
     private static SerializedDataCntl theSerializedDataCntl;
-    private final String EXTERNAL_DATA_PATH = "algorhythmmvc_data/";
-    private final String ALGORHYTHMMVC_DATA_FILE_NAME = "songlist.tsv";
+    private final String EXTERNAL_DATA_PATH = "algorhythmmvc_data";
+    private final String ALGORHYTHMMVC_DATA_FILE_NAME = "songlist.TSV";
     //private ExternalDataCntl theExternalDataCntl;
     
     public SerializedDataCntl()
