@@ -1,20 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- 
+/* 
+• You can work with a partner on this problem 
+• Implement Media (Song) import and app-wide data serialization 
+• Uses should be able to:
 
-package stopwatch;
+– Navigate to the media list view (use a JTable to display the list of media)
+– Media are imported from the songlist.TSV file or another source (you need a minimum of 1000 songs)
+– Select a media (e.g., a song) and view the detail for the object 
+– Create a Rating for the media, a media can have more than one Rating 
+– Compute and display an aggregate Rating for the media based on all of its individual Ratings 
+– Your implementation should conform to the MVC architecture pattern 
+– All data should be saved (persisted) between application runs
+
+• Zip the entire AlgoRhythm Netbeans project and submit to Canvas before the due data and time
+• Important: Each successive version of AlgoRhythm should build on code you wrote for the prior submission
+• Due Friday, 11 November @ 11:50pm
+ */
+
+package algorhythmmvc;
 
 /**
  *
  * @author gbr5023
+*/
  
-public class Main 
+public class Stopwatch 
 {
 
     /**
@@ -29,32 +38,10 @@ public class Main
         System.out.println(sw.getElapsedTime());
         LoginCntl theLoginCntl = new LoginCntl();
     }    
-
+    */
 }
 
- 
-
-package algorhythmmvc;
-
-/**
- *
- * @author gbr5023
- 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- 
-
-package stopwatch;
-
-/**
- *
- * @author gbr5023
- 
-public class Stopwatch 
-{
-    private long startTime;
+/*private long startTime;
     private long stopTime;
     private long elapsedTime;
     
@@ -116,4 +103,5 @@ public class Stopwatch
     public void setElapsedTime(long elapsedTime) {
         this.elapsedTime = elapsedTime;
     }
-}
+*/
+

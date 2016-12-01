@@ -31,7 +31,7 @@ import java.util.Scanner;
 public class ExternalDataCntl 
 {
     private final String EXTERNAL_DATA_PATH = "algorhythmmvc_data";
-    private final String SONG_FILE_NAME = "songlist.tsv";
+    private final String SONG_FILE_NAME = "songlist-1.tsv";
     
     public ExternalDataCntl()
     {
@@ -64,7 +64,7 @@ public class ExternalDataCntl
             
             System.out.println("Count: " + count);
             // write here
-            SerializedDataCntl.getSerializedDataCntl().writeSerializedDataModel();
+            //SerializedDataCntl.getSerializedDataCntl().writeSerializedDataModel();
             SerializedDataCntl.getSerializedDataCntl().readSerializedDataModel();
         }
         catch(FileNotFoundException fnfe)

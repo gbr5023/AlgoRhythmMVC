@@ -37,8 +37,8 @@ public class MediaList implements Serializable
     {
         if(theMediaList == null)
         {
-            //buildTestMediaList();
-            ExternalDataCntl theExternalDataCntl = new ExternalDataCntl();
+            buildTestMediaList();
+            //ExternalDataCntl theExternalDataCntl = new ExternalDataCntl();
             
         }
     }

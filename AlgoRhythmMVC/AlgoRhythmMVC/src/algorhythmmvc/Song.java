@@ -129,4 +129,13 @@ public class Song extends Media
     public ArrayList<Double> getMediaRatingList() {
         return this.theMediaRatingList;
     }
+    
+    public int compareTo(Object otherObject)
+    {
+        int result = 0;
+        Song otherSong = (Song) otherObject;
+        
+        
+        return result;
+    }
 }

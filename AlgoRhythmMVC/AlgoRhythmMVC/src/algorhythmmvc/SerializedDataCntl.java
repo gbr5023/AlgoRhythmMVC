@@ -18,6 +18,7 @@
 
 package algorhythmmvc;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -35,7 +36,7 @@ public class SerializedDataCntl implements Serializable
 {
     private SerializedDataModel theSerializedDataModel;
     private static SerializedDataCntl theSerializedDataCntl;
-    private final String EXTERNAL_DATA_PATH = "algorhythmmvc_data";
+    private final String EXTERNAL_DATA_PATH = "algorhythmmvc_data/";
     private final String ALGORHYTHMMVC_DATA_FILE_NAME = "songlist.TSV";
     //private ExternalDataCntl theExternalDataCntl;
     
@@ -75,7 +76,7 @@ public class SerializedDataCntl implements Serializable
     {
         FileInputStream fis = null;
         ObjectInputStream ois = null;
-        String filePath = EXTERNAL_DATA_PATH + "/" + ALGORHYTHMMVC_DATA_FILE_NAME;
+        String filePath = EXTERNAL_DATA_PATH + ALGORHYTHMMVC_DATA_FILE_NAME;
         
         try
         {
@@ -102,7 +103,7 @@ public class SerializedDataCntl implements Serializable
     {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
-        String filePath = EXTERNAL_DATA_PATH + "/" + ALGORHYTHMMVC_DATA_FILE_NAME;
+        String filePath = EXTERNAL_DATA_PATH + ALGORHYTHMMVC_DATA_FILE_NAME;
         
         try
         {
